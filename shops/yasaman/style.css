@@ -281,6 +281,7 @@ section:target, footer:target {
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 8px;
   scroll-behavior: smooth;
   padding: 16px 8px 24px;
 }
@@ -294,7 +295,11 @@ section:target, footer:target {
   border: 1px solid #d7dfd8;
   border-radius: 14px;
   padding: 18px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s;
+}
+
+.carousel-end {
+  flex: 0 0 calc(100% - 226px);
 }
 
 .product:hover, .product:focus-within {
@@ -503,6 +508,10 @@ address a, .footer-content > div:last-child > a {
 
   .product {
     flex-basis: 200px;
+  }
+
+  .carousel-end {
+    flex-basis: calc(100% - 216px);
   }
 
   .banners, .footer-content {
