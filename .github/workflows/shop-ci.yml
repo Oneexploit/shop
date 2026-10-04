@@ -1,0 +1,28 @@
+name: Shop CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Check task rules and internal links
+        run: python3 shops/yasaman/check_ci.py
+      - name: Download HTML and CSS validator
+        run: curl --fail --location --retry 3 https://github.com/validator/validator/releases/download/latest/vnu.jar --output "$RUNNER_TEMP/vnu.jar"
+      - name: Validate HTML
+        run: java -jar "$RUNNER_TEMP/vnu.jar" --errors-only shops/yasaman/index.html
+      - name: Validate CSS
+        run: java -jar "$RUNNER_TEMP/vnu.jar" --errors-only --css shops/yasaman/style.css
