@@ -17,7 +17,7 @@
 در حالت کاهش حرکت، transition و اسکرول نرم حذف می‌شوند و کارت بالا نمی‌رود.
 transform به‌جای تغییر margin انتخاب شده تا محل کارت در جریان صفحه ثابت بماند.
 
-ضبط با Chromium و پروتکل DevTools انجام شد و Paint flashing هنگام ضبط فعال بود. performance-menu.json و performance-card.json را می‌توان در بخش Performance ابزار DevTools وارد کرد.
+ضبط با Chromium و پروتکل DevTools انجام شد و Paint flashing هنگام ضبط فعال بود. فایل performance.zip شامل performance-menu.json و performance-card.json است؛ پس از استخراج می‌توان آن‌ها را در بخش Performance ابزار DevTools وارد کرد.
 در ضبط منو: Layout صفر، Paint برابر ۵ و UpdateLayoutTree برابر ۱۸ بود.
 در ضبط کارت: Layout برابر ۲، Paint برابر ۵۳ و UpdateLayoutTree برابر ۲۶ بود.
 رویداد DroppedFrame در هر دو ضبط صفر بود. این نتیجه مربوط به همین اجرای کوتاه است و تضمین سرعت روی تمام دستگاه‌ها نیست.
